@@ -9,5 +9,9 @@
   "copied_evidence": "evidence/ISSUE4_ONE_STEP_SCHEDULING_CLOSURE_20260815.md",
   "copied_evidence_sha256": "bff35d908a9fa2a3afbf63d798fc55654c0854f75d6cde65fd10f73e448df0f5",
   "qualification_inherited": false,
-  "implementation_extracted": false
+  "implementation_extracted": false,
+  "licensing": {
+    "scaffolding": "Apache-2.0",
+    "copied_evidence": "No additional license grant is inferred from this split."
+  }
 }
