@@ -1,0 +1,13 @@
+{
+  "schema_version": "stateaxis-mod-provenance/v1",
+  "source_repository": "Qixin-Gaoke/stateaxis",
+  "source_commit": "7562b5fa6f42e2e045a877b53ac934739e2cf230",
+  "source_issues": [
+    4
+  ],
+  "source_evidence": "docs/history/reports/ISSUE4_ONE_STEP_SCHEDULING_CLOSURE_20260815.md",
+  "copied_evidence": "evidence/ISSUE4_ONE_STEP_SCHEDULING_CLOSURE_20260815.md",
+  "copied_evidence_sha256": "bff35d908a9fa2a3afbf63d798fc55654c0854f75d6cde65fd10f73e448df0f5",
+  "qualification_inherited": false,
+  "implementation_extracted": false
+}
