@@ -1,0 +1,87 @@
+{
+  "schema_version": "stateaxis-mod-on-off/v1",
+  "date_utc": "2026-10-11",
+  "mod_id": "org.vllm-hust.stateaxis-one-step-scheduling",
+  "mod_version": "0.2.0",
+  "research_manifest_sha256": "afaf187041fc810def1c893aaf7f952578e4dd6814d167572b6fbd03a2c77cad",
+  "evidence_label": "matched-real-npu-negative-active-contract-correctness-positive",
+  "performance_qualified": false,
+  "host": {
+    "repository": "Qixin-Gaoke/stateaxis",
+    "pull_request": 517,
+    "merge_commit": "319a69d856c9550932fdc25f5520e213e604d8a8",
+    "activation_mode": "active_experimental",
+    "assembly_and_state_graph_identity_bound": true,
+    "legacy_direct_activation_rejected": true,
+    "effect_counters": [
+      "proposals_total",
+      "prepared_total",
+      "validated_total",
+      "authority_applied_total",
+      "mismatch_total",
+      "stale_total",
+      "fallback_total",
+      "rollback_total"
+    ]
+  },
+  "manager": {
+    "provider": "stateaxis",
+    "manifest_schema": "0.3-experimental",
+    "check": "passed_with_expected_experimental_degradation",
+    "plan": "passed",
+    "dry_run": "passed",
+    "managed_assembly_check_process": "passed"
+  },
+  "matched_runtime": {
+    "off_identity": null,
+    "off_effect_counts": 0,
+    "on_identity_bound": true,
+    "on_proposals_equal_prepared_validated_authority": true,
+    "on_authority_applied_minimum": 1,
+    "on_mismatch_total": 0,
+    "on_stale_total": 0,
+    "on_fallback_total": 0,
+    "on_rollback_total": 0,
+    "exact_output_match": true,
+    "lifecycle_shutdown": "passed"
+  },
+  "matched_assembly": {
+    "off_fingerprint_sha256": "0746f53d2f5a176e4263ffec68844f18fd825fb7d7a2926e388b2ea543fce40c",
+    "on_fingerprint_sha256": "da8c2b627033b54aedf88d38502219faf2c96cdc73cf53f9233d0460f9305cf5"
+  },
+  "historical_matched_real_npu": {
+    "model": "Qwen2.5-14B",
+    "cells": "concurrency 16/32; output tokens 32/128",
+    "fresh_service_repetitions_per_cell": 3,
+    "median_throughput_ratio": 1.0047,
+    "positive_pair_signs": "2/3",
+    "statistically_significant": false,
+    "authority_applications": 234,
+    "exact_outputs": true,
+    "fallback_or_mismatch": 0,
+    "maximum_ideal_all_gap_removal_percent": 2.9798,
+    "acceptance_threshold_percent": 5.0
+  },
+  "benchmark_outline": {
+    "matched_real_online_status": "HISTORICAL_NEGATIVE_RETAINED",
+    "reason": "The original 3+3 real-NPU matrix and the stricter ideal upper-bound analysis already reject the tested mechanism/cell. The active revision makes activation reproducible but deliberately does not add executor overlap, so it cannot inherit a new benefit claim.",
+    "future_gate": "Open a distinct mechanism identity only after profiling identifies at least 5% removable scheduler/executor overlap, then run a fresh 3+3 OFF/ON NPU matrix."
+  },
+  "validation": {
+    "python_tests": "2 passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "rust_library_tests": "428 passed",
+    "cargo_check_lib_bins": "passed",
+    "matched_runtime_on_off": "passed",
+    "matched_assembly_on_off": "passed",
+    "extension_manager_check_plan_dry_run": "passed",
+    "managed_assembly_check_process": "passed"
+  },
+  "limitations": [
+    "proposal_horizon_batches is zero",
+    "executor overlap is not implemented",
+    "the historical tested cell showed no significant benefit",
+    "there is no speedup or general performance claim"
+  ]
+}

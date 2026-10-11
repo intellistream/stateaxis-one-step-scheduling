@@ -1,8 +1,8 @@
 {
   "schema_version": "0.3-experimental",
   "extension_id": "org.vllm-hust.stateaxis-one-step-scheduling",
-  "extension_version": "0.1.0.dev0",
-  "kind": "in_process_plugin",
+  "extension_version": "0.2.0",
+  "kind": "runtime_bridge",
   "host": {
     "provider": "stateaxis",
     "name": "stateaxis",
@@ -23,15 +23,20 @@
   ],
   "implementation": [
     {
-      "type": "python_module",
-      "module": "stateaxis_one_step_scheduling",
-      "object": "StateaxisOneStepSchedulingContractProposal",
-      "status": "import_only"
+      "type": "host_builtin",
+      "symbol": "statecentric_engine:parse_one_step_scheduling_additional_config",
+      "status": "active"
     }
   ],
   "requires_services": [],
   "requires_extensions": [],
-  "resource_claims": [],
+  "resource_claims": [
+    {
+      "resource": "stateaxis.scheduler.forward-plan-authority",
+      "scope": "stateaxis-process",
+      "mode": "exclusive"
+    }
+  ],
   "components": [
     {
       "component_id": "stateaxis-one-step-scheduling",
@@ -40,17 +45,44 @@
       ],
       "execution_planes": [
         "scheduler",
-        "worker",
-        "device"
+        "worker"
       ],
       "isolation": "trusted_in_process",
-      "implementation_ref": "stateaxis_one_step_scheduling:StateaxisOneStepSchedulingContractProposal",
+      "implementation_ref": "stateaxis_one_step_scheduling:one_step_scheduling",
       "permissions": []
     }
   ],
   "activation": {
-    "entry_points": [],
+    "entry_points": [
+      {
+        "group": "stateaxis.mod_handlers",
+        "name": "one_step_scheduling"
+      }
+    ],
     "environment": {},
-    "additional_config": {}
+    "additional_config": {
+      "stateaxis_one_step_scheduling": {
+        "enabled": true,
+        "shadow_enabled": true,
+        "authority_enabled": true,
+        "scope": "exact-control-plan-same-turn",
+        "proposal_horizon_batches": 0,
+        "executor_overlap": false,
+        "exact_request_order": true,
+        "exact_state_slot_budget": true,
+        "exact_kv_block_budget": true,
+        "single_use_proposal": true,
+        "stale_or_mismatch_rollback": true,
+        "executor_error_rollback": true,
+        "fallback_to_control": true,
+        "fail_closed": true
+      },
+      "stateaxis_mod": {
+        "mod_id": "org.vllm-hust.stateaxis-one-step-scheduling",
+        "version": "0.2.0",
+        "manifest_sha256": "afaf187041fc810def1c893aaf7f952578e4dd6814d167572b6fbd03a2c77cad",
+        "performance_qualified": false
+      }
+    }
   }
 }
