@@ -16,28 +16,31 @@
     "advisors": []
   },
   "lifecycle": {
-    "status": "experimental",
+    "status": "active_experimental",
     "default_enabled": false,
-    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
-    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+    "activation_contract": "Manifest 0.3 activation is owned by vLLM-HUST Extension Manager/ECPA. StateAxis accepts only version 0.2.0 with the pinned research-manifest hash and the reviewed same-turn exact-plan contract.",
+    "rollback_contract": "Disable or forget the extension in Extension Manager configuration. StateAxis then uses the unchanged control scheduler without this MOD identity or effect counters."
   },
   "scope": {
-    "mechanism": "one_step_ahead_execution_scheduling",
-    "supported_workloads": [],
+    "mechanism": "same_turn_exact_plan_forward_authority",
+    "supported_workloads": [
+      "StateAxis scheduling turns whose request order, state-slot budget and KV-block budget exactly match the reviewed proposal"
+    ],
     "out_of_scope": [
+      "executor-overlap or one-step-ahead execution claims",
       "general performance claims",
       "automatic inheritance from StateAxis aggregate evidence"
     ]
   },
   "evidence": {
     "qualification": "not-beneficial-in-tested-cell",
-    "latest_result": "evidence/ISSUE4_ONE_STEP_SCHEDULING_CLOSURE_20260815.md",
+    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {
-        "label": "not-beneficial-in-tested-cell",
-        "scope": "frozen StateAxis source evidence only",
-        "result": "The measured all-bubble ideal upper bound peaked at 2.98%, below the 5% admission threshold."
+        "label": "matched-real-npu-negative-active-contract-correctness-positive",
+        "scope": "Qwen2.5-14B historical real-NPU cell plus current ECPA same-turn contract",
+        "result": "The historical 3+3 matched run measured 1.0047x median throughput with only two positive paired signs; the impossible all-gap-removal ceiling peaked at 2.9798%, below the 5% threshold. Current activation, exactness, counters, rollback contract and lifecycle checks pass; no performance benefit or executor overlap is claimed."
       }
     ]
   }

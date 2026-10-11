@@ -2,41 +2,59 @@
 
 Extension ID: `org.vllm-hust.stateaxis-one-step-scheduling`
 
-One-step-ahead scheduler/executor overlap.
+This active experimental MOD is the independently reviewable scheduling
+contract for StateAxis issue
+[#4](https://github.com/Qixin-Gaoke/stateaxis/issues/4). Shuhao Zhang (Tony) is
+directly responsible; no advisor is declared.
 
-This repository is the independent MOD boundary for StateAxis issues [#4](https://github.com/Qixin-Gaoke/stateaxis/issues/4).
-It is deliberately `import_only`, default-off, and cannot be enabled. The split does
-not inherit correctness, device, performance, or publication qualification from the
-aggregate StateAxis repository.
+The v0.2 mechanism creates, validates and consumes an exact control-plan
+proposal in the same scheduling turn. Authority is granted only when request
+order, state-slot budget and KV-block budget match. Proposals are single-use;
+stale state, mismatch or executor error rolls back to the control path and the
+contract fails closed.
 
-## Evidence boundary
+This revision does **not** schedule one batch ahead and does **not** overlap CPU
+planning with executor work. `proposal_horizon_batches` is zero and
+`executor_overlap` is false. The name records the original research direction;
+the manifest records the narrower mechanism that actually exists.
 
-Status: **rejected**.
+## Activation
 
-The measured all-bubble ideal upper bound peaked at 2.98%, below the 5% admission threshold.
-
-The copied evidence and its SHA-256 are recorded in `PROVENANCE.json`. Negative,
-failed, and inconclusive results are retained. Microbenchmarks and component results
-must not be restated as online end-to-end gains.
-
-## Install and inspect
+Activation is default-off and must go through vLLM-HUST Extension Manager/ECPA:
 
 ```bash
 python -m pip install .
-vllm-hust-ext extension inspect org.vllm-hust.stateaxis-one-step-scheduling
-vllm-hust-ext extension check org.vllm-hust.stateaxis-one-step-scheduling
+VLLM_HUST_EXT_CONFIG=evidence/ecpa-contract-20261011/manager-config.json \
+  vllm-hust-ext extension check \
+  org.vllm-hust.stateaxis-one-step-scheduling
+VLLM_HUST_EXT_CONFIG=evidence/ecpa-contract-20261011/manager-config.json \
+  vllm-hust-ext extension plan \
+  org.vllm-hust.stateaxis-one-step-scheduling
 ```
 
-Discovery does not enable the MOD. A future active revision must extract an
-independently reviewable implementation, declare exclusive resources where needed,
-and pass exactness, lifecycle, release, failure-recovery, and matched real-online
-gates.
+StateAxis accepts only version `0.2.0` and the exact research-manifest SHA-256.
+Legacy environment-variable activation is rejected. Rollback is to disable or
+forget the extension, which restores the unchanged control scheduler.
+
+## Evidence boundary
+
+The retained Qwen2.5-14B real-NPU 3+3 matched result measured a `1.0047x`
+median throughput ratio, only two positive paired signs, and no significant
+difference. Its 234 authority applications were exact with zero fallback or
+mismatch. A later upper-bound analysis found a maximum impossible all-gap
+removal ceiling of `2.9798%`, below the preregistered `5%` threshold.
+
+Current Manifest 0.3 Manager, managed assembly, matched runtime exactness,
+effect-counter, rollback and lifecycle checks pass. These results do not turn
+the historical negative into a speedup claim and do not establish executor
+overlap. See [EVIDENCE.md](EVIDENCE.md).
 
 ## Validate
 
 ```bash
 python -m pip install -e '.[test]'
+ruff check .
+ruff format --check .
 pytest -q
+python -m build
 ```
-
-Maintainer: Shuhao Zhang (Tony), directly responsible; no advisor is declared.
