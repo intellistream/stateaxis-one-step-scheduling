@@ -34,7 +34,7 @@
   },
   "evidence": {
     "qualification": "not-beneficial-in-tested-cell",
-    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
+    "latest_result": "evidence/issue4-one-step-upper-bound-20260815-r10/result.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "experiment_container_started": false,
+  "experiment_container_removed": "not_applicable",
+  "business_containers_stopped_or_modified": false,
+  "image_pull_used": false,
+  "npu_state_changed": false
+}

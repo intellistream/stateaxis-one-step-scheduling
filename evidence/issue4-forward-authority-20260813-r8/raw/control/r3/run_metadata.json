@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "evidence_label": "real-online-smoke",
+  "timestamp_recorded": "2026-08-13T09:41:46+08:00",
+  "hardware": {
+    "accelerator": "Ascend 910B2",
+    "physical_device": 0
+  },
+  "runtime": {
+    "container": "statecentric-issue4-r8-npu0-20260813",
+    "container_id": "8f29f30c1b6d4b9bd6d541b82e6342990d681571d55ef765d63c66ec93b701e8",
+    "image": "quay.io/ascend/vllm-ascend:v0.23.0rc1-openeuler"
+  },
+  "workload": {
+    "state_capacity": 17,
+    "churn_cycles": 17,
+    "hbm_drift_limit_bytes": 67108864
+  },
+  "artifacts": {
+    "result_sha256": "c32337824f2bb9b68df5b178470d0e8a928fda1c3e510a07ad41505d1fb76a5f",
+    "raw_requests_sha256": "a64392cbba4be8578d7eb88dc611750e4177edff1bfa649aaf0e0076cdd092bb",
+    "executor_snapshots_sha256": "64120940d17c28d5aba1950fae4a0d8c3ab03e9274a85a2bc4544db7441ef00f",
+    "batch_plans_sha256": "89936a3802c5f6600cb2e8259b3a5895e4d0bb727df75d1cbd1eade1965061fa",
+    "health_sha256": "c9d701de506747f6cd47003b0604be19bb9bbd6e3f61a47317549b285f35427c",
+    "server_log_sha256": "265be458c911c32ba2255a7a86fc67e283e88f89ee576895ec745044b4e56caf"
+  },
+  "command": "STATE_ENGINE_NPU=0 STATE_ENGINE_PRESSURE_CYCLES=17 STATE_ENGINE_HBM_DRIFT_LIMIT_BYTES=67108864 STATE_ENGINE_NATIVE_PRESSURE_OUTPUT_ROOT=/home/shuhao/statecentric-ascend-engine/.benchmarks STATE_ENGINE_NATIVE_PRESSURE_OUTPUT=issue4-forward-authority-20260813-r8-control-r3 scripts/run_native_http_pressure_probe.sh",
+  "metadata_generator": "python3-fallback-no-jq"
+}

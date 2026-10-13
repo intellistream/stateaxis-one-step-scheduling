@@ -1,0 +1,408 @@
+{
+  "aggregates": {
+    "candidate": {
+      "authority_applied_total": 234,
+      "authority_fallbacks_total": 0,
+      "hbm_drift_max_bytes": 528384,
+      "hbm_peak_max_bytes": 55245717504,
+      "hbm_peak_median_bytes": 55245533184,
+      "phase_latency_median_of_run_p50_ms": {
+        "cancelled_resume": 136.632502,
+        "replacement_prefill": 84.028705,
+        "setup_prefill": 211.247735,
+        "stale_generation_replay": 1.2961
+      },
+      "phase_latency_median_of_run_p95_ms": {
+        "cancelled_resume": 191.654993,
+        "replacement_prefill": 85.030137,
+        "setup_prefill": 281.455907,
+        "stale_generation_replay": 1.431993
+      },
+      "runs": 3,
+      "throughput_cv": 0.012389251392230084,
+      "throughput_mean_successful_requests_per_second": 8.072822868987918,
+      "throughput_median_successful_requests_per_second": 8.030957329933104,
+      "throughput_values": [
+        8.00054241983374,
+        8.030957329933104,
+        8.186968857196913
+      ]
+    },
+    "control": {
+      "authority_applied_total": 0,
+      "authority_fallbacks_total": 0,
+      "hbm_drift_max_bytes": 1359872,
+      "hbm_peak_max_bytes": 55246516224,
+      "hbm_peak_median_bytes": 55245860864,
+      "phase_latency_median_of_run_p50_ms": {
+        "cancelled_resume": 136.510684,
+        "replacement_prefill": 83.833804,
+        "setup_prefill": 210.416883,
+        "stale_generation_replay": 1.32108
+      },
+      "phase_latency_median_of_run_p95_ms": {
+        "cancelled_resume": 190.344218,
+        "replacement_prefill": 84.330669,
+        "setup_prefill": 279.365566,
+        "stale_generation_replay": 1.599006
+      },
+      "runs": 3,
+      "throughput_cv": 0.004458742676156866,
+      "throughput_mean_successful_requests_per_second": 8.012854058792387,
+      "throughput_median_successful_requests_per_second": 7.993755007740725,
+      "throughput_values": [
+        8.054071492207223,
+        7.993755007740725,
+        7.990735676429211
+      ]
+    }
+  },
+  "candidate_over_control_median_throughput_ratio": 1.0046539232383722,
+  "candidate_over_control_phase_p95_ratios": {
+    "cancelled_resume": 1.0068863399885357,
+    "replacement_prefill": 1.0082943489989389,
+    "setup_prefill": 1.007482457591069,
+    "stale_generation_replay": 0.8955519866717199
+  },
+  "conclusion": "no_significant_difference",
+  "correctness_gate_passed": true,
+  "issue": "#4",
+  "paired_repeats": [
+    {
+      "candidate_faster": false,
+      "candidate_over_control_throughput_ratio": 0.9933537872832051,
+      "repeat": 1,
+      "semantic_match": {
+        "passed": true,
+        "post_setup_churn_exact": true,
+        "setup_identity_set_complete": true,
+        "setup_payload_equal": true
+      }
+    },
+    {
+      "candidate_faster": true,
+      "candidate_over_control_throughput_ratio": 1.0046539232383722,
+      "repeat": 2,
+      "semantic_match": {
+        "passed": true,
+        "post_setup_churn_exact": true,
+        "setup_identity_set_complete": true,
+        "setup_payload_equal": true
+      }
+    },
+    {
+      "candidate_faster": true,
+      "candidate_over_control_throughput_ratio": 1.0245575862741327,
+      "repeat": 3,
+      "semantic_match": {
+        "passed": true,
+        "post_setup_churn_exact": true,
+        "setup_identity_set_complete": true,
+        "setup_payload_equal": true
+      }
+    }
+  ],
+  "production_default_recommendation": "keep disabled pending a workload where forward planning overlaps material control work",
+  "runs": {
+    "candidate": [
+      {
+        "arm": "candidate",
+        "authority_applied": 80,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 80,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 258048,
+        "hbm_used_max_bytes": 55245086720,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 191.654993,
+            "p50_ms": 136.632502,
+            "p95_ms": 191.654993,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 84.494057,
+            "p50_ms": 83.828831,
+            "p95_ms": 84.494057,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 278.807553,
+            "p50_ms": 209.649497,
+            "p95_ms": 278.807553,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.431993,
+            "p50_ms": 1.29038,
+            "p95_ms": 1.431993,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 80,
+        "repeat": 1,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4249.711859,
+        "successful_requests": 34,
+        "successful_requests_per_second": 8.00054241983374,
+        "validated": 0
+      },
+      {
+        "arm": "candidate",
+        "authority_applied": 78,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 78,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 266240,
+        "hbm_used_max_bytes": 55245533184,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 192.089551,
+            "p50_ms": 136.980645,
+            "p95_ms": 192.089551,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 89.624474,
+            "p50_ms": 84.253911,
+            "p95_ms": 89.624474,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 282.669428,
+            "p50_ms": 215.362413,
+            "p95_ms": 282.669428,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.387301,
+            "p50_ms": 1.2961,
+            "p95_ms": 1.387301,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 78,
+        "repeat": 2,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4233.617314,
+        "successful_requests": 34,
+        "successful_requests_per_second": 8.030957329933104,
+        "validated": 0
+      },
+      {
+        "arm": "candidate",
+        "authority_applied": 76,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 76,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 528384,
+        "hbm_used_max_bytes": 55245717504,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 190.544636,
+            "p50_ms": 136.122549,
+            "p95_ms": 190.544636,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 85.030137,
+            "p50_ms": 84.028705,
+            "p95_ms": 85.030137,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 281.455907,
+            "p50_ms": 211.247735,
+            "p95_ms": 281.455907,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.495484,
+            "p50_ms": 1.305059,
+            "p95_ms": 1.495484,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 76,
+        "repeat": 3,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4152.941167,
+        "successful_requests": 34,
+        "successful_requests_per_second": 8.186968857196913,
+        "validated": 0
+      }
+    ],
+    "control": [
+      {
+        "arm": "control",
+        "authority_applied": 0,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 79,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 299008,
+        "hbm_used_max_bytes": 55245860864,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 190.186379,
+            "p50_ms": 136.510684,
+            "p95_ms": 190.186379,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 84.326812,
+            "p50_ms": 83.80919,
+            "p95_ms": 84.326812,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 279.365566,
+            "p50_ms": 210.462889,
+            "p95_ms": 279.365566,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.486344,
+            "p50_ms": 1.336991,
+            "p95_ms": 1.486344,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 79,
+        "repeat": 1,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4221.46737,
+        "successful_requests": 34,
+        "successful_requests_per_second": 8.054071492207223,
+        "validated": 79
+      },
+      {
+        "arm": "control",
+        "authority_applied": 0,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 79,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 1359872,
+        "hbm_used_max_bytes": 55246516224,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 191.103021,
+            "p50_ms": 135.964819,
+            "p95_ms": 191.103021,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 84.409177,
+            "p50_ms": 83.833804,
+            "p95_ms": 84.409177,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 280.054893,
+            "p50_ms": 210.151015,
+            "p95_ms": 280.054893,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.599006,
+            "p50_ms": 1.32108,
+            "p95_ms": 1.599006,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 79,
+        "repeat": 2,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4253.320244,
+        "successful_requests": 34,
+        "successful_requests_per_second": 7.993755007740725,
+        "validated": 79
+      },
+      {
+        "arm": "control",
+        "authority_applied": 0,
+        "authority_fallbacks": 0,
+        "cancellations_accepted": 17,
+        "digest_match": true,
+        "executed_batches": 80,
+        "executor_error": 0,
+        "final_generations_all_two": true,
+        "hbm_drift_bytes": 425984,
+        "hbm_used_max_bytes": 55245672448,
+        "latency_by_phase": {
+          "cancelled_resume": {
+            "max_ms": 190.344218,
+            "p50_ms": 136.712106,
+            "p95_ms": 190.344218,
+            "samples": 17
+          },
+          "replacement_prefill": {
+            "max_ms": 84.330669,
+            "p50_ms": 83.841428,
+            "p95_ms": 84.330669,
+            "samples": 17
+          },
+          "setup_prefill": {
+            "max_ms": 277.080833,
+            "p50_ms": 210.416883,
+            "p95_ms": 277.080833,
+            "samples": 17
+          },
+          "stale_generation_replay": {
+            "max_ms": 1.715119,
+            "p50_ms": 1.292139,
+            "p95_ms": 1.715119,
+            "samples": 17
+          }
+        },
+        "mismatch": 0,
+        "prepared": 80,
+        "repeat": 3,
+        "replacement_prefills_correct": 17,
+        "rollback": 0,
+        "self_correct": true,
+        "stale": 0,
+        "successful_request_window_ms": 4254.927378,
+        "successful_requests": 34,
+        "successful_requests_per_second": 7.990735676429211,
+        "validated": 80
+      }
+    ]
+  },
+  "schema_version": 1,
+  "version": "issue4-forward-authority-20260813-r8"
+}

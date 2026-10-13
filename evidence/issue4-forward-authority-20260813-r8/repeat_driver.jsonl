@@ -1,0 +1,12 @@
+{"event":"start","sequence":1,"arm":"control","repeat":1,"output":"issue4-forward-authority-20260813-r8-control-r1","epoch":1786585071}
+{"event":"finish","sequence":1,"arm":"control","repeat":1,"output":"issue4-forward-authority-20260813-r8-control-r1","epoch":1786585116,"exit_code":0}
+{"event":"start","sequence":2,"arm":"candidate","repeat":1,"output":"issue4-forward-authority-20260813-r8-candidate-r1","epoch":1786585116}
+{"event":"finish","sequence":2,"arm":"candidate","repeat":1,"output":"issue4-forward-authority-20260813-r8-candidate-r1","epoch":1786585162,"exit_code":0}
+{"event":"start","sequence":3,"arm":"candidate","repeat":2,"output":"issue4-forward-authority-20260813-r8-candidate-r2","epoch":1786585162}
+{"event":"finish","sequence":3,"arm":"candidate","repeat":2,"output":"issue4-forward-authority-20260813-r8-candidate-r2","epoch":1786585215,"exit_code":0}
+{"event":"start","sequence":4,"arm":"control","repeat":2,"output":"issue4-forward-authority-20260813-r8-control-r2","epoch":1786585215}
+{"event":"finish","sequence":4,"arm":"control","repeat":2,"output":"issue4-forward-authority-20260813-r8-control-r2","epoch":1786585260,"exit_code":0}
+{"event":"start","sequence":5,"arm":"control","repeat":3,"output":"issue4-forward-authority-20260813-r8-control-r3","epoch":1786585260}
+{"event":"finish","sequence":5,"arm":"control","repeat":3,"output":"issue4-forward-authority-20260813-r8-control-r3","epoch":1786585306,"exit_code":0}
+{"event":"start","sequence":6,"arm":"candidate","repeat":3,"output":"issue4-forward-authority-20260813-r8-candidate-r3","epoch":1786585306}
+{"event":"finish","sequence":6,"arm":"candidate","repeat":3,"output":"issue4-forward-authority-20260813-r8-candidate-r3","epoch":1786585358,"exit_code":0}

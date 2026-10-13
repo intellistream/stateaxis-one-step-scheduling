@@ -1,0 +1,12 @@
+{
+  "candidate_authority_applied_total": 234,
+  "candidate_fallbacks_total": 0,
+  "correctness_gate_passed": true,
+  "default_enabled": false,
+  "issue": "#4",
+  "performance_conclusion": "no_significant_difference",
+  "schema_version": 1,
+  "status": "npu_3plus3_no_significant_difference",
+  "throughput_ratio": 1.0046539232383722,
+  "version": "issue4-forward-authority-20260813-r8"
+}

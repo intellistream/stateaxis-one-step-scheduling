@@ -1,0 +1,12 @@
+a8dca0180ebd16cb4c2606904d39810b0a62d81020a5748876f894a5ebea89a4  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o32-r1/result.json
+3a91f979070551cc00ee5599b31f1d801d46fb6da76a6275cea8dd47e787976b  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o32-r2/result.json
+05ab8e5215b24b536526784644f1b3c22093ff0534fb43f58ce0cb294cf5d0d7  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o32-r3/result.json
+5a5b3b728e16469c96cc2295ba1e56fefdef2c77a376c5bdf0871faad212c37b  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o128-r1/result.json
+15c48ac29dc4c16312b43102c4ca6a67605f5c560e914b7bb4ab6992e5c708de  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o128-r2/result.json
+96cfe84982bd4b7de9441b2504f1873bdf4748ec77fbfee1bee124b7775591d0  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c16-o128-r3/result.json
+3143a8feb60bd1838a8ce836d3bc113cc363ae1e4b226116eebc2f25626a4ff2  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o32-r1/result.json
+cbcec6a93ab2221fa3656cddc1597452d2f6ea8198cb230e6d44975321098425  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o32-r2/result.json
+84f715004977ba5c9f88d5e3f940d6ff84bcdab93bdc5d444c577285932ce262  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o32-r3/result.json
+ab26d120fb12e86e901a888090a1d0286c23d079669d1c710a314bc2d560b88c  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o128-r1/result.json
+aab8db8bb9143d8e43b26855eaab291ec94f2ece30bb88e3d3ef6be742a997a8  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o128-r2/result.json
+385d4ec9e9b39a53fdb7f217ede08a4009f8f4da24ed19f9e0ec998fa6a3f942  /home/shuhao/statecentric-ascend-engine/.benchmarks/qwen14b-longdecode-r11-native-c32-o128-r3/result.json

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "issue": "#4",
+  "version": "issue4-one-step-upper-bound-20260815-r10",
+  "status": "complete_negative",
+  "source_runs": 12,
+  "source_runs_exact": 12,
+  "hardware_execution_in_sources": true,
+  "candidate_executed_in_r10": false,
+  "maximum_optimistic_throughput_fraction": 0.029797703335394037,
+  "acceptance_target_fraction": 0.05,
+  "decision": "keep_default_off_and_close_current_mechanism",
+  "performance_claim": "negative_feasibility_result_only",
+  "cleanup": {
+    "new_experiment_container_started": false,
+    "business_containers_modified": false,
+    "image_pull_used": false
+  }
+}
