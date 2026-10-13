@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "experiment_container": "statecentric-issue4-r8-npu0-20260813",
+  "experiment_container_removed": true,
+  "experiment_container_present_after": false,
+  "physical_npu": 0,
+  "aicore_usage_percent_after": 0,
+  "npu_utilization_percent_after": 0,
+  "hbm_usage_percent_after": 5,
+  "npu_processes_after": 0,
+  "business_containers_stopped_or_modified": false,
+  "pull_used": false,
+  "device_reset_used": false,
+  "process_kill_used": false
+}

@@ -43,6 +43,8 @@ median throughput ratio, only two positive paired signs, and no significant
 difference. Its 234 authority applications were exact with zero fallback or
 mismatch. A later upper-bound analysis found a maximum impossible all-gap
 removal ceiling of `2.9798%`, below the preregistered `5%` threshold.
+The complete R8 and R10 evidence bundles are vendored under `evidence/` with
+repo-local SHA-256 manifests.
 
 Current Manifest 0.3 Manager, managed assembly, matched runtime exactness,
 effect-counter, rollback and lifecycle checks pass. These results do not turn

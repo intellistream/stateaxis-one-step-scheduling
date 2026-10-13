@@ -1,0 +1,51 @@
+{
+  "algorithm": "StateCompatibilityIdentity::digest_hex blake3/framed-v1",
+  "client_namespace_digest": "c3eaa7bca4b238a990e8d37c743a910bbacbce198f12db5c6aba7de69214b210",
+  "digest_comparison": {
+    "actual": "c3eaa7bca4b238a990e8d37c743a910bbacbce198f12db5c6aba7de69214b210",
+    "expected": "c3eaa7bca4b238a990e8d37c743a910bbacbce198f12db5c6aba7de69214b210",
+    "match": true
+  },
+  "field_comparison": {
+    "cache_layout_digest": {
+      "actual": "365cfbd46470bde77eb53c81f37889069710544ee506af69d29c56071a3c6795",
+      "expected": "365cfbd46470bde77eb53c81f37889069710544ee506af69d29c56071a3c6795",
+      "match": true
+    },
+    "compiled_plan_digest": {
+      "actual": "3e7c55eedfd035d2a85432b61878bfd6b85e2591e2df7018ff54362e0e9e231c",
+      "expected": "3e7c55eedfd035d2a85432b61878bfd6b85e2591e2df7018ff54362e0e9e231c",
+      "match": true
+    },
+    "rope_semantics_digest": {
+      "actual": "727d6bdcbb2a888af175107dec84f02bc794319c4b14e320e25a0f6ac490b0e2",
+      "expected": "727d6bdcbb2a888af175107dec84f02bc794319c4b14e320e25a0f6ac490b0e2",
+      "match": true
+    },
+    "scheduler_plan_digest": {
+      "actual": "fc280e2a31059f1369229e3adade6a97a76dc21fc60be3d45dac2e1729f73dff",
+      "expected": "fc280e2a31059f1369229e3adade6a97a76dc21fc60be3d45dac2e1729f73dff",
+      "match": true
+    },
+    "state_schema_digest": {
+      "actual": "a130e3e491d2751adbabd3b3013f5b7963d5cc550089f4496807a40296e34d94",
+      "expected": "a130e3e491d2751adbabd3b3013f5b7963d5cc550089f4496807a40296e34d94",
+      "match": true
+    },
+    "weights_digest": {
+      "actual": "4ca9cbc269c4605424d3170d614f43854388b19bee70ade62c28ce054ee9033a",
+      "expected": "4ca9cbc269c4605424d3170d614f43854388b19bee70ade62c28ce054ee9033a",
+      "match": true
+    }
+  },
+  "fields": {
+    "cache_layout_digest": "365cfbd46470bde77eb53c81f37889069710544ee506af69d29c56071a3c6795",
+    "compiled_plan_digest": "3e7c55eedfd035d2a85432b61878bfd6b85e2591e2df7018ff54362e0e9e231c",
+    "rope_semantics_digest": "727d6bdcbb2a888af175107dec84f02bc794319c4b14e320e25a0f6ac490b0e2",
+    "scheduler_plan_digest": "fc280e2a31059f1369229e3adade6a97a76dc21fc60be3d45dac2e1729f73dff",
+    "state_schema_digest": "a130e3e491d2751adbabd3b3013f5b7963d5cc550089f4496807a40296e34d94",
+    "weights_digest": "4ca9cbc269c4605424d3170d614f43854388b19bee70ade62c28ce054ee9033a"
+  },
+  "runtime_expected_digest": "c3eaa7bca4b238a990e8d37c743a910bbacbce198f12db5c6aba7de69214b210",
+  "schema_version": 1
+}

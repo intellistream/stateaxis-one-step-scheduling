@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "issue": "#4",
+  "version": "issue4-forward-authority-20260813-r8",
+  "inherits": "benchmarks/issue4_forward_authority_20260813_r7_preregistration.json",
+  "r7_result_sha256": "18ebca08bf0af5c7f64530e8585522aa0230baba511d4fa3cbea1b81656c30ea",
+  "r7_evidence_manifest_sha256": "91d4518f47f23515c992087a6870418b6d22ab6d4cb659162192402f2ca141f6",
+  "admission": "R7 matched semantic trace passed; candidate authority_applied=80/80 and fallback/mismatch/stale/executor-error/rollback=0.",
+  "repeat_contract": {
+    "runs_per_arm": 3,
+    "lifecycle": "fresh native server and worker process per run; experiment container and immutable mounted artifacts may be reused",
+    "order": ["control", "candidate", "candidate", "control", "control", "candidate"],
+    "retain_every_run": true,
+    "runner_sha256": "83427114e2aad170f6340e1f449142dd672eaf2ba6278c779d4768dc978e3de7",
+    "native_server_sha256": "fc574c0cdc8479838916d47a23e48999e33f01e66d8801c87373718b9c11feda",
+    "worker_sha256": "bde08b1baa678a1cb62fb319180efbc4796a441a4e2678cb5c3361e23ab401af"
+  },
+  "matched_fields": "identical to R7: official local .23 image, NPU0, 17/4/4, cycles=17, eviction pressure disabled, artifact/config/oracle/digest/request/timing boundaries",
+  "metrics": [
+    "per-phase request latency p50/p95/max",
+    "successful request throughput over first-start to last-completion",
+    "HBM peak and drift",
+    "authority/prepared/validated/fallback/mismatch/stale/executor-error/rollback",
+    "within-arm coefficient of variation"
+  ],
+  "correctness_gate": "Every run must satisfy the R7 semantic contract: setup identity set 1..17 complete, post-setup churn exact, 17 replacement prefills exact, 17 accepted cancellations, final generations all 2, digest match; candidate authority_applied>0 and all fail-closed error counters zero.",
+  "performance_conclusion": {
+    "positive": "candidate median successful-request throughput > control by at least 1.5%, all three paired signs positive, candidate phase p95 values no worse than control by more than 5%, and both arms throughput CV <= 0.15",
+    "negative": "candidate median throughput < control by at least 1.5% or any candidate phase p95 is worse by more than 5% with all three paired signs adverse",
+    "otherwise": "no significant difference"
+  },
+  "prohibitions": [
+    "do not delete failed or adverse runs",
+    "do not mix cold process startup into request latency",
+    "do not stop or modify business containers",
+    "do not claim production-default acceptance from this experiment"
+  ]
+}
